@@ -3,9 +3,6 @@ package com.afs.tdd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DemoTest {
@@ -21,7 +18,7 @@ class DemoTest {
     void should_return_x_coordinate_given_batch_instructions() {
         Coordinates expectedCoordinates =
                 new Coordinates(1, 2, 'N');
-        marsRover.getMovementInstructions(initialRoverInstruction);
+        marsRover.executeCommands("1 2 N");
         assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(expectedCoordinates.getxCoords());
     }
 
@@ -29,7 +26,7 @@ class DemoTest {
     void should_return_y_coordinate_given_batch_instructions() {
         Coordinates expectedCoordinates =
                 new Coordinates(1, 2, 'N');
-        marsRover.getMovementInstructions(initialRoverInstruction);
+        marsRover.executeCommands("1 2 N");
         assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(expectedCoordinates.getyCoords());
     }
 
@@ -37,15 +34,8 @@ class DemoTest {
     void should_return_direction_given_batch_instructions() {
         Coordinates expectedCoordinates =
                 new Coordinates(1, 2, 'N');
-        marsRover.getMovementInstructions(initialRoverInstruction);
+        marsRover.executeCommands("1 2 N");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo(expectedCoordinates.getDirection());
-    }
-
-    @Test
-    void should_return_roverMovements_given_batch_instructions() {
-        List<Character> expectedRoverMovements = Arrays.asList('M','L','M','M','M');
-        List<Character> outputRoverMovements = marsRover.getMovementInstructions(initialRoverInstruction);
-        assertThat(outputRoverMovements).isEqualTo(expectedRoverMovements);
     }
 
     @Test
