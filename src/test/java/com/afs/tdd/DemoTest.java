@@ -53,4 +53,12 @@ class DemoTest {
         marsRover.turnLeft();
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("E");
     }
+
+    @Test
+    void turnLeft_should_return_South_direction_given_rover_is_facing_East() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"E"));
+        marsRover.turnLeft();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("S");
+    }
 }

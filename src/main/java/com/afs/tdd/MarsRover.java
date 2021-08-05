@@ -28,6 +28,8 @@ public class MarsRover {
     private String getDirectionAfterLeftTurn(String currentDirection) {
         if (currentDirection.equals("N")) {
             return "E";
+        } else if (currentDirection.equals("E")) {
+            return "S";
         }
         return "";
     }
