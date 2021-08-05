@@ -78,4 +78,36 @@ class DemoTest {
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("N");
     }
 
+    @Test
+    void turnRight_should_return_East_direction_given_rover_is_facing_North() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"N"));
+        marsRover.turnRight();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("E");
+    }
+
+    @Test
+    void turnRight_should_return_South_direction_given_rover_is_facing_East() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"E"));
+        marsRover.turnRight();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("S");
+    }
+
+    @Test
+    void turnRight_should_return_West_direction_given_rover_is_facing_South() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"S"));
+        marsRover.turnRight();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("W");
+    }
+
+    @Test
+    void turnRight_should_return_North_direction_given_rover_is_facing_West() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"W"));
+        marsRover.turnRight();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("N");
+    }
+
 }
