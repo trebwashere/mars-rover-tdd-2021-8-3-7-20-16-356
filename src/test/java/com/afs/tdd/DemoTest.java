@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DemoTest {
+
     private String initialRoverInstruction;
     private MarsRover marsRover;
 
@@ -41,84 +42,84 @@ class DemoTest {
     @Test
     void turnLeft_should_return_East_direction_given_rover_is_facing_North() {
         marsRover.setCoordinates(new Coordinates(0,0,'N'));
-        marsRover.turnLeft();
+        marsRover.executeCommands("L");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('W');
     }
 
     @Test
     void turnLeft_should_return_South_direction_given_rover_is_facing_West() {
         marsRover.setCoordinates(new Coordinates(0,0,'W'));
-        marsRover.turnLeft();
+        marsRover.executeCommands("L");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('S');
     }
 
     @Test
     void turnLeft_should_return_East_direction_given_rover_is_facing_South() {
         marsRover.setCoordinates(new Coordinates(0,0,'S'));
-        marsRover.turnLeft();
+        marsRover.executeCommands("L");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('E');
     }
 
     @Test
     void turnLeft_should_return_North_direction_given_rover_is_facing_East() {
         marsRover.setCoordinates(new Coordinates(0,0,'E'));
-        marsRover.turnLeft();
+        marsRover.executeCommands("L");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('N');
     }
 
     @Test
     void turnRight_should_return_East_direction_given_rover_is_facing_North() {
         marsRover.setCoordinates(new Coordinates(0,0,'N'));
-        marsRover.turnRight();
+        marsRover.executeCommands("R");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('E');
     }
 
     @Test
     void turnRight_should_return_South_direction_given_rover_is_facing_East() {
         marsRover.setCoordinates(new Coordinates(0,0,'E'));
-        marsRover.turnRight();
+        marsRover.executeCommands("R");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('S');
     }
 
     @Test
     void turnRight_should_return_West_direction_given_rover_is_facing_South() {
         marsRover.setCoordinates(new Coordinates(0,0,'S'));
-        marsRover.turnRight();
+        marsRover.executeCommands("R");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('W');
     }
 
     @Test
     void turnRight_should_return_North_direction_given_rover_is_facing_West() {
         marsRover.setCoordinates(new Coordinates(0,0,'W'));
-        marsRover.turnRight();
+        marsRover.executeCommands("R");
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo('N');
     }
 
     @Test
     void moveForward_should_return_positive_1_yCoordinate_given_rover_is_facing_North() {
         marsRover.setCoordinates(new Coordinates(0,0,'N'));
-        marsRover.moveForward();
+        marsRover.executeCommands("M");
         assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(1);
     }
 
     @Test
     void moveForward_should_return_negative_1_yCoordinate_given_rover_is_facing_South() {
         marsRover.setCoordinates(new Coordinates(0,0,'S'));
-        marsRover.moveForward();
+        marsRover.executeCommands("M");
         assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(-1);
     }
 
     @Test
     void moveForward_should_return_positive_1_xCoordinate_given_rover_is_facing_East() {
         marsRover.setCoordinates(new Coordinates(0,0,'E'));
-        marsRover.moveForward();
+        marsRover.executeCommands("M");
         assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(1);
     }
 
     @Test
     void moveForward_should_return_negative_1_xCoordinate_given_rover_is_facing_West() {
         marsRover.setCoordinates(new Coordinates(0,0,'W'));
-        marsRover.moveForward();
+        marsRover.executeCommands("M");
         assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(-1);
     }
 

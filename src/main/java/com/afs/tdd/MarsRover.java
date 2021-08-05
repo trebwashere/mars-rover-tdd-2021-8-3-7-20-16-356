@@ -15,11 +15,11 @@ public class MarsRover {
         return coordinates;
     }
 
-    public void turnLeft() {
+    private void turnLeft() {
         coordinates.setDirection(evaluateRoverRotation('L'));
     }
 
-    public void turnRight() {
+    private void turnRight() {
         coordinates.setDirection(evaluateRoverRotation('R'));
     }
 
@@ -33,7 +33,7 @@ public class MarsRover {
         return null;
     }
 
-    public void moveForward() {
+    private void moveForward() {
         DirectionsEnum currentDirection = DirectionsEnum.valueOf(String.valueOf(coordinates.getDirection()));
         if (currentDirection.getVerticalDirections().contains(currentDirection)) {
             int yCoords = coordinates.getyCoords();
@@ -68,5 +68,7 @@ public class MarsRover {
                 case 'M': moveForward(); break;
             }
         }
+        System.out.printf("Hello earthlings! My current position is at [%d, %d, %s]!%n",
+                coordinates.getxCoords(), coordinates.getyCoords(), coordinates.getDirection());
     }
 }
