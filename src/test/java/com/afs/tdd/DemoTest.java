@@ -126,4 +126,20 @@ class DemoTest {
         assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(-1);
     }
 
+    @Test
+    void moveForward_should_return_positive_1_xCoordinate_given_rover_is_facing_East() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"E"));
+        marsRover.moveForward();
+        assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(1);
+    }
+
+    @Test
+    void moveForward_should_return_negative_1_xCoordinate_given_rover_is_facing_West() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"W"));
+        marsRover.moveForward();
+        assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(-1);
+    }
+
 }
