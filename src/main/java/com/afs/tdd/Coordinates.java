@@ -1,22 +1,17 @@
 package com.afs.tdd;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Instructions {
+public class Coordinates {
     private int xCoords;
     private int yCoords;
     private String direction;
-    List<Character> roverMovements = new ArrayList<>();
 
-    public Instructions(int xCoords, int yCoords, String direction, List<Character> roverMovements) {
+    public Coordinates(int xCoords, int yCoords, String direction) {
         this.xCoords = xCoords;
         this.yCoords = yCoords;
         this.direction = direction;
-        this.roverMovements = roverMovements;
     }
 
-    public Instructions() {
+    public Coordinates() {
     }
 
     public int getxCoords() {
@@ -41,13 +36,5 @@ public class Instructions {
 
     public void setDirection(String direction) {
         this.direction = direction;
-    }
-
-    public List<Character> getRoverMovements() {
-        return roverMovements;
-    }
-
-    public void setRoverMovements(List<Character> roverMovements) {
-        this.roverMovements = roverMovements;
     }
 }
