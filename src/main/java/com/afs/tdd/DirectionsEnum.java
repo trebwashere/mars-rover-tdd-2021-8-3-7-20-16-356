@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.EnumSet;
+
 public enum DirectionsEnum {
     N("W", "E"),
     S("E", "W"),
@@ -20,5 +22,13 @@ public enum DirectionsEnum {
 
     public String getDirectionAfterRight() {
         return directionAfterRight;
+    }
+
+    public EnumSet<DirectionsEnum> getVerticalDirections() {
+        return EnumSet.of(N,S);
+    }
+
+    public EnumSet<DirectionsEnum> getHorizontalDirections() {
+        return EnumSet.of(E,W);
     }
 }
