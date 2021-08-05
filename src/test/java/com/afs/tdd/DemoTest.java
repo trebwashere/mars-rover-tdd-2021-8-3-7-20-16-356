@@ -15,7 +15,7 @@ class DemoTest {
         sampleInstructions = "0 0 N MLMMM";
     }
     @Test
-    void should_return_x_and_y_given_batch_instructions() {
+    void should_return_x_coordinate_given_batch_instructions() {
         Instructions expectedInstructions =
                 new Instructions(0, 0, "N", "MLMMM".chars().mapToObj(obj -> (char) obj).collect(Collectors.toList()));
         Instructions testResult = Application.spliceInstructions(sampleInstructions);
