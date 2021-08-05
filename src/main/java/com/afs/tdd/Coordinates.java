@@ -3,9 +3,9 @@ package com.afs.tdd;
 public class Coordinates {
     private int xCoords;
     private int yCoords;
-    private String direction;
+    private Character direction;
 
-    public Coordinates(int xCoords, int yCoords, String direction) {
+    public Coordinates(int xCoords, int yCoords, Character direction) {
         this.xCoords = xCoords;
         this.yCoords = yCoords;
         this.direction = direction;
@@ -30,11 +30,11 @@ public class Coordinates {
         this.yCoords = yCoords;
     }
 
-    public String getDirection() {
+    public Character getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
+    public void setDirection(Character direction) {
         this.direction = direction;
     }
 }

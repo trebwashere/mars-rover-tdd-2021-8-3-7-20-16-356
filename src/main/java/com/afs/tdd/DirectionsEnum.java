@@ -3,24 +3,24 @@ package com.afs.tdd;
 import java.util.EnumSet;
 
 public enum DirectionsEnum {
-    N("W", "E"),
-    S("E", "W"),
-    E("N", "S"),
-    W("S", "N");
+    N('W', 'E'),
+    S('E', 'W'),
+    E('N', 'S'),
+    W('S', 'N');
 
-    DirectionsEnum(String directionAfterLeft, String directionAfterRight) {
+    DirectionsEnum(Character directionAfterLeft, Character directionAfterRight) {
         this.directionAfterLeft = directionAfterLeft;
         this.directionAfterRight = directionAfterRight;
     }
 
-    private final String directionAfterLeft;
-    private final String directionAfterRight;
+    private final Character directionAfterLeft;
+    private final Character directionAfterRight;
 
-    public String getDirectionAfterLeft() {
+    public Character getDirectionAfterLeft() {
         return directionAfterLeft;
     }
 
-    public String getDirectionAfterRight() {
+    public Character getDirectionAfterRight() {
         return directionAfterRight;
     }
 
