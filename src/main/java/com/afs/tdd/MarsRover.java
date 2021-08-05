@@ -35,6 +35,9 @@ public class MarsRover {
         if (currentDirection.getVerticalDirections().contains(currentDirection)) {
             int yCoords = coordinates.getyCoords();
             coordinates.setyCoords(currentDirection.equals(DirectionsEnum.N) ? ++yCoords : --yCoords);
+        } else if(currentDirection.getHorizontalDirections().contains(currentDirection)) {
+            int xCoords = coordinates.getxCoords();
+            coordinates.setxCoords(currentDirection.equals(DirectionsEnum.E) ? ++xCoords : --xCoords);
         }
     }
 }
