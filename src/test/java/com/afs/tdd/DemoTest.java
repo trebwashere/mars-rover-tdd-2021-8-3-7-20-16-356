@@ -118,4 +118,12 @@ class DemoTest {
         assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(1);
     }
 
+    @Test
+    void moveForward_should_return_negative_1_yCoordinate_given_rover_is_facing_South() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"S"));
+        marsRover.moveForward();
+        assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(-1);
+    }
+
 }
