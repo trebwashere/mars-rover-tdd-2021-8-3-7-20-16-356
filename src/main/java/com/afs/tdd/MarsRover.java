@@ -18,20 +18,20 @@ public class MarsRover {
 
     private String evaluateRoverRotation(String rotationDirection) {
         String currentDirection = coordinates.getDirection();
-        switch(rotationDirection) {
-            case "L":
-                return getDirectionAfterLeftTurn(currentDirection);
+        if (rotationDirection.equals("L")) {
+            return getDirectionAfterLeftTurn(currentDirection);
         }
         return "";
     }
 
     private String getDirectionAfterLeftTurn(String currentDirection) {
-        if (currentDirection.equals("N")) {
-            return "W";
-        } else if (currentDirection.equals("W")) {
-            return "S";
-        } else if (currentDirection.equals("S")) {
-            return "E";
+        switch (currentDirection) {
+            case "N":
+                return "W";
+            case "W":
+                return "S";
+            case "S":
+                return "E";
         }
         return "";
     }
