@@ -5,6 +5,7 @@ public class Application {
         String[] splicedInstructions = instructionsStr.split(" ");
         return new Instructions(){{
             setxCoords(Integer.parseInt(splicedInstructions[0]));
+            setyCoords(Integer.parseInt(splicedInstructions[1]));
         }};
     }
 }
