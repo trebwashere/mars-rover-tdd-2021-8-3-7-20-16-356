@@ -20,10 +20,14 @@ public class MarsRover {
         String currentDirection = coordinates.getDirection();
         switch(rotationDirection) {
             case "L":
-                if (currentDirection.equals("N")) {
-                    return "E";
-                }
-                break;
+                return getDirectionAfterLeftTurn(currentDirection);
+        }
+        return "";
+    }
+
+    private String getDirectionAfterLeftTurn(String currentDirection) {
+        if (currentDirection.equals("N")) {
+            return "E";
         }
         return "";
     }
