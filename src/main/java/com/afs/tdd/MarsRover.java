@@ -16,23 +16,18 @@ public class MarsRover {
         coordinates.setDirection(evaluateRoverRotation("L"));
     }
 
+    public void turnRight() {
+        coordinates.setDirection(evaluateRoverRotation("R"));
+    }
+
     private String evaluateRoverRotation(String rotationDirection) {
-        String currentDirection = coordinates.getDirection();
+        DirectionsEnum currentDirection = DirectionsEnum.valueOf(coordinates.getDirection());
         if (rotationDirection.equals("L")) {
-            return getDirectionAfterLeftTurn(currentDirection);
+            return currentDirection.getDirectionAfterLeft();
+        } else if (rotationDirection.equals("R")) {
+            return currentDirection.getDirectionAfterRight();
         }
         return "";
     }
 
-    private String getDirectionAfterLeftTurn(String currentDirection) {
-        switch (currentDirection) {
-            case "N":
-                return "W";
-            case "W":
-                return "S";
-            case "S":
-                return "E";
-        }
-        return "";
-    }
 }
