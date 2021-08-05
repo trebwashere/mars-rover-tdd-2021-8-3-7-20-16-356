@@ -1,18 +1,16 @@
 package com.afs.tdd;
 
 public enum DirectionsEnum {
-    NORTH("N","W", "E"),
-    SOUTH("S", "E", "W"),
-    EAST("E", "N", "S"),
-    WEST("W", "S", "N");
+    N("W", "E"),
+    S("E", "W"),
+    E("N", "S"),
+    W("S", "N");
 
-    DirectionsEnum(String directionInitial, String directionAfterLeft, String directionAfterRight) {
-        this.directionInitial = directionInitial;
+    DirectionsEnum(String directionAfterLeft, String directionAfterRight) {
         this.directionAfterLeft = directionAfterLeft;
         this.directionAfterRight = directionAfterRight;
     }
 
-    private final String directionInitial;
     private final String directionAfterLeft;
     private final String directionAfterRight;
 
