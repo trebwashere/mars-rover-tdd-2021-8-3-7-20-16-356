@@ -29,4 +29,12 @@ class DemoTest {
         Instructions testResult = Application.spliceInstructions(sampleInstructions);
         assertThat(testResult.getyCoords()).isEqualTo(expectedInstructions.getyCoords());
     }
+
+    @Test
+    void should_return_direction_given_batch_instructions() {
+        Instructions expectedInstructions =
+                new Instructions(1, 2, "N", "MLMMM".chars().mapToObj(obj -> (char) obj).collect(Collectors.toList()));
+        Instructions testResult = Application.spliceInstructions(sampleInstructions);
+        assertThat(testResult.getDirection()).isEqualTo(expectedInstructions.getDirection());
+    }
 }
