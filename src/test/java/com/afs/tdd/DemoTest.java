@@ -121,4 +121,28 @@ class DemoTest {
         marsRover.moveForward();
         assertThat(marsRover.getCoordinates().getxCoords()).isEqualTo(-1);
     }
+
+    @Test
+    void should_return_expected_output_given_complex_instructions() {
+        marsRover.executeCommands("1 2 N MLMMM");
+        assertThat(-2).isEqualTo(marsRover.getCoordinates().getxCoords());
+        assertThat(3).isEqualTo(marsRover.getCoordinates().getyCoords());
+        assertThat('W').isEqualTo(marsRover.getCoordinates().getDirection());
+        marsRover.executeCommands("0 0 W");
+        assertThat(0).isEqualTo(marsRover.getCoordinates().getxCoords());
+        assertThat(0).isEqualTo(marsRover.getCoordinates().getyCoords());
+        assertThat('W').isEqualTo(marsRover.getCoordinates().getDirection());
+        marsRover.executeCommands("0 0 N MMMMLLLLMMMM");
+        assertThat(0).isEqualTo(marsRover.getCoordinates().getxCoords());
+        assertThat(8).isEqualTo(marsRover.getCoordinates().getyCoords());
+        assertThat('N').isEqualTo(marsRover.getCoordinates().getDirection());
+        marsRover.executeCommands("0 0 N MMMMMMMMMRMMMMMM");
+        assertThat(6).isEqualTo(marsRover.getCoordinates().getxCoords());
+        assertThat(9).isEqualTo(marsRover.getCoordinates().getyCoords());
+        assertThat('E').isEqualTo(marsRover.getCoordinates().getDirection());
+        marsRover.executeCommands("RMMMMMMMMMRMMMMMMR");
+        assertThat(0).isEqualTo(marsRover.getCoordinates().getxCoords());
+        assertThat(0).isEqualTo(marsRover.getCoordinates().getyCoords());
+        assertThat('N').isEqualTo(marsRover.getCoordinates().getDirection());
+    }
 }
