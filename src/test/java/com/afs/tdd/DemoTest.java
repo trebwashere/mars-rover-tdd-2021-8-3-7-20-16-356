@@ -45,4 +45,12 @@ class DemoTest {
         List<Character> outputRoverMovements = Application.getMovementInstructions(sampleInstructions);
         assertThat(outputRoverMovements).isEqualTo(expectedRoverMovements);
     }
+
+    @Test
+    void turnLeft_should_return_East_direction_given_rover_is_facing_North() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"N"));
+        marsRover.turnLeft();
+        assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("E");
+    }
 }
