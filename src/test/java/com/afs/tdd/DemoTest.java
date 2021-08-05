@@ -110,4 +110,12 @@ class DemoTest {
         assertThat(marsRover.getCoordinates().getDirection()).isEqualTo("N");
     }
 
+    @Test
+    void moveForward_should_return_positive_1_yCoordinate_given_rover_is_facing_North() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.setCoordinates(new Coordinates(0,0,"N"));
+        marsRover.moveForward();
+        assertThat(marsRover.getCoordinates().getyCoords()).isEqualTo(1);
+    }
+
 }
