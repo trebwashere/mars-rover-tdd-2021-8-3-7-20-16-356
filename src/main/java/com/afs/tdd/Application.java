@@ -6,6 +6,7 @@ public class Application {
         return new Instructions(){{
             setxCoords(Integer.parseInt(splicedInstructions[0]));
             setyCoords(Integer.parseInt(splicedInstructions[1]));
+            setDirection(splicedInstructions[2]);
         }};
     }
 }
