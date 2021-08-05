@@ -44,15 +44,16 @@ public class MarsRover {
         }
     }
 
-    public List<Character> getMovementInstructions(String instructionsStr) {
+    private List<Character> getMovementInstructions(String instructionsStr) {
         String[] splicedInstructions = instructionsStr.split(" ");
-        if (splicedInstructions.length > 1) {
+        if (splicedInstructions.length >= 3) {
             this.setCoordinates(new Coordinates(){{
                 setxCoords(Integer.parseInt(splicedInstructions[0]));
                 setyCoords(Integer.parseInt(splicedInstructions[1]));
                 setDirection(splicedInstructions[2].charAt(0));
             }});
         }
+
         return splicedInstructions[splicedInstructions.length - 1].chars()
                 .mapToObj(character -> (char) character)
                 .collect(Collectors.toList());
@@ -61,10 +62,10 @@ public class MarsRover {
     public void executeCommands(String instructionsStr) {
         List<Character> complexInstructions = getMovementInstructions(instructionsStr);
         for (Character instruction : complexInstructions) {
-            if (instruction.equals('L') || instruction.equals('R')) {
-                evaluateRoverRotation(instruction);
-            } else {
-                moveForward();
+            switch(instruction) {
+                case 'L': turnLeft(); break;
+                case 'R': turnRight(); break;
+                case 'M': moveForward(); break;
             }
         }
     }
