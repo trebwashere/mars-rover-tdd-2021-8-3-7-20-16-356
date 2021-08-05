@@ -30,4 +30,11 @@ public class MarsRover {
         return "";
     }
 
+    public void moveForward() {
+        DirectionsEnum currentDirection = DirectionsEnum.valueOf(coordinates.getDirection());
+        if (currentDirection.getVerticalDirections().contains(currentDirection)) {
+            int yCoords = coordinates.getyCoords();
+            coordinates.setyCoords(currentDirection.equals(DirectionsEnum.N) ? ++yCoords : --yCoords);
+        }
+    }
 }
